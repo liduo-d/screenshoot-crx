@@ -1,4 +1,4 @@
-# screenshoot-crx
+# screenshot-crx
 
 ###Description:
 
@@ -10,7 +10,7 @@ It is very simple to use, just call the API in the crx, and pass the size of the
 
 ```
 chromeInject.sendMsgToContent({
-    cmd: 'screenshoot', value: getPageSize()
+    cmd: 'screenshot', value: getPageSize()
 });
 
 getPageSize() {
@@ -54,4 +54,4 @@ If the size of the downloaded image is inconsistent with your expected, please c
 
 ###Demo:
 
-Here is a Vue project using this crx, see more: https://github.com/liduo-d/vue-screenshoot
+Here is a Vue project using this crx, see more: https://github.com/liduo-d/vue-screenshot
