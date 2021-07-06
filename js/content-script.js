@@ -50,6 +50,7 @@ const chromeContent = {
     sendMsgToBg(msg) {
         msg.clientWidth = document.documentElement.clientWidth;
         msg.clientHeight = document.documentElement.clientHeight;
+        msg.dpr = window.devicePixelRatio;
         chrome.runtime.sendMessage(msg, cb => {
             console.log('Content2Bg callback: ', cb);
             this.downImage(cb);

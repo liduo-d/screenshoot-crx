@@ -34,6 +34,7 @@ function AreaCapture(v, callback) {
     this.offsetX = v.x;
     this.offsetY = v.y;
     this.tabId = 0;
+    this.dpr = v.dpr;
     this.screenData = '';
     this.captureImgData = '';
     this.callback = callback;
@@ -70,7 +71,7 @@ AreaCapture.prototype = {
         img.src = this.screenData;
 
         img.onload = () => {
-            this.ctx.drawImage(img, this.offsetX, this.offsetY, this.vw, this.vh, 0, 0, this.cw, this.ch);
+            this.ctx.drawImage(img, this.dpr * this.offsetX, this.dpr * this.offsetY, this.dpr * this.vw, this.dpr * this.vh, 0, 0, this.cw, this.ch);
             this.getImage();
         };
     },

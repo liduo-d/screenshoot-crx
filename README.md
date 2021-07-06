@@ -48,10 +48,6 @@ drawImage(data) {
 
 ```
 
-###Notice:
-
-If the size of the downloaded image is inconsistent with your expected, please check whether the 'zoom and layout' in the system display is 100%.
-
 ###Demo:
 
 Here is a Vue project using this crx, see more: https://github.com/liduo-d/vue-screenshot
