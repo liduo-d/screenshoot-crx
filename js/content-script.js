@@ -41,7 +41,7 @@ const chromeContent = {
         const self = this;
         window.addEventListener('message', e => {
             console.log('From Inject.js: ', e.data);
-            if (e.data && e.data.cmd === 'screenshoot') {
+            if (e.data && e.data.cmd === 'screenshot') {
                 self.sendMsgToBg.bind(self)(e.data.value)
             }
         }, false)
