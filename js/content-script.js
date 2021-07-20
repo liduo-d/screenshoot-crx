@@ -40,8 +40,8 @@ const chromeContent = {
     getMsgFromPageEvent() {
         const self = this;
         window.addEventListener('message', e => {
-            console.log('From Inject.js: ', e.data);
             if (e.data && e.data.cmd === 'screenshot') {
+                console.log('From Inject.js: ', e.data);
                 self.sendMsgToBg.bind(self)(e.data.value)
             }
         }, false)
@@ -53,16 +53,14 @@ const chromeContent = {
         msg.dpr = window.devicePixelRatio;
         chrome.runtime.sendMessage(msg, cb => {
             console.log('Content2Bg callback: ', cb);
-            this.downImage(cb);
+            this.sendMsgToInject(msg, cb);
         });
     },
 
-    downImage(data) {
-        const link = document.createElement('a');
-        link.download = 'ctx2iamge.png';
-        link.href = data;
-        link.click();
-        link.remove();
+    sendMsgToInject(msg, cb) {
+        msg.cmd = 'cb';
+        msg.url = cb;
+        window.postMessage(msg, '*')
     }
 };
 
