@@ -1,10 +1,10 @@
 # screenshot-crx
 
-###Description:
+### Description:
 
 This is a Chrome Extension for developers, which realizes the screenshot of page designated area.
 
-###Use:
+### Use:
 
 It is very simple to use, just call the API in the crx, and pass the size of the specified area element and its position relative to the viewport.
 
@@ -25,7 +25,7 @@ getPageSize() {
 
 ```
 
-###Principle:
+### Principle:
 
 The crx calls the API to get the complete view in Chrome, then cuts and draws it on the canvas according to the coordinate parameters.
 
@@ -48,6 +48,6 @@ drawImage(data) {
 
 ```
 
-###Demo:
+### Demo:
 
 Here is a Vue project using this crx, see more: https://github.com/liduo-d/vue-screenshot
